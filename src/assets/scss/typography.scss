@@ -1,0 +1,25 @@
+@import "./variables";
+
+/* Text styles */
+.Text-Style {
+  font-family: Lato;
+  font-size: 40px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+
+  color: getColor(black);
+}
+
+.Text-Style-2 {
+  font-family: Lato;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: getColor(black);
+}

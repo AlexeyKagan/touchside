@@ -1,0 +1,94 @@
+@import "../../assets/scss/variables";
+@import "~bootstrap/scss/bootstrap-grid";
+
+// @tODO try to not possition form on center and try to use padding, margin
+// @todo check form width
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-image: url("../../assets/images/snow-falling.jpg");
+  background-size: 100% 100%;
+  min-height: 100%;
+  overflow-y: auto;
+
+  &__form {
+    margin-top: 40px;
+  }
+
+  &__fields-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px 10px;
+  }
+
+  &__submit-btn {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  &__submit-form-row {
+    justify-content: center;
+  }
+
+  &__invalid-field {
+    background: #555d60;
+    color: getColor(white);
+    margin: 0;
+    padding: 5px 0 5px 10px;
+    font-weight: lighter;
+    position: relative;
+
+    &:before {
+      bottom: 100%;
+      left: 5%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: #555d60;
+      border-width: 7px;
+    }
+  }
+
+  &__invalid-message {
+    padding: 15px 15px;
+    color: getColor(white);
+    background: rgba(85, 93, 96, 0.4);
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  &__header {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: getColor(white);
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+//@include media-breakpoint-down(sm) {
+//  .contact__header {
+//    padding-top: 45%;
+//    font-size: 1.2rem;
+//  }
+//}
+
+@media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+  .contact__header {
+    //padding-top: 20%;
+    font-size: 1.2rem;
+    //display: flex;
+    display: none;
+  }
+}

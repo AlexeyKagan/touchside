@@ -1,0 +1,46 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/functions";
+@import "../../assets/scss/variables";
+
+$bootstrap-hamburger-icon-url: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{rgb(255, 255, 255)}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+$bootstrap-hamburger-icon: str-replace($bootstrap-hamburger-icon-url, "#", "%23");
+
+.header {
+  background: getColor(black);
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+
+  &__link {
+    padding: 20px 0;
+    margin-right: 15px;
+    font-size: 17px;
+  }
+
+  &__brand {
+    @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+      margin-right: 35%;
+    }
+  }
+
+  &__toggle {
+    border:none;
+
+    &-icon {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      background-image: $bootstrap-hamburger-icon;
+    }
+  }
+}
+
+.header-brand {
+  margin: 0 30px;
+  &__stick {
+    width: 8px;
+    height: 32px;
+    background: getColor(white);
+    transform: rotate(45deg);
+  }
+}
