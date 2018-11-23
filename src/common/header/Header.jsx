@@ -1,7 +1,10 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 import './header.scss';
+
+// @TODO constat for routing?
 
 function Header() {
   return (
@@ -18,9 +21,9 @@ function Header() {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link className="header__link" href="/home">Home</Nav.Link>
-          <Nav.Link className="header__link" href="/people">People</Nav.Link>
-          <Nav.Link className="header__link" href="/contact">Contact</Nav.Link>
+          <Nav.Link as={Link} className="header__link" to="/home">Home</Nav.Link>
+          <Nav.Link as={Link} className="header__link" to="/people">People</Nav.Link>
+          <Nav.Link as={Link} className="header__link" to="/contact">Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
 

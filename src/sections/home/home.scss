@@ -1,0 +1,10 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import "../../assets/scss/variables";
+
+.home {
+  &__container {
+    @media (min-width: map-get($grid-breakpoints, "xl")) {
+      max-width: 650px;
+    }
+  }
+}

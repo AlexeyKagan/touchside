@@ -1,19 +1,20 @@
-@import "../../assets/scss/variables";
 @import "~bootstrap/scss/bootstrap-grid";
+@import "../../assets/scss/variables";
 
-// @tODO try to not possition form on center and try to use padding, margin
-// @todo check form width
+
 .contact {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
   flex-direction: column;
   background-image: url("../../assets/images/snow-falling.jpg");
   background-size: 100% 100%;
   min-height: 100%;
   overflow-y: auto;
+
+  height: 820px;
+
 
   &__form {
     margin-top: 40px;
@@ -74,21 +75,25 @@
     color: getColor(white);
     text-align: center;
     font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__submitted-message {
+    @extend .contact__invalid-message;
+    font-size: 18px;
+
+  }
+
+  &__container {
+    @media (min-width: 1200px) {
+      max-width: 700px;
+    }
   }
 }
 
-//@include media-breakpoint-down(sm) {
-//  .contact__header {
-//    padding-top: 45%;
-//    font-size: 1.2rem;
-//  }
-//}
 
 @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
   .contact__header {
-    //padding-top: 20%;
     font-size: 1.2rem;
-    //display: flex;
-    display: none;
   }
 }

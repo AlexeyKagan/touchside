@@ -1,0 +1,18 @@
+@import "../../../assets/scss/variables";
+
+.home-gallery {
+  background: url("../../../assets/images/bxptaaer9wizkodialg6.jpg");
+  background-size: 100%;
+  &__header {
+    color: getColor(bluish-grey);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__social-id {
+    color: getColor(white);
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: normal;
+  }
+}

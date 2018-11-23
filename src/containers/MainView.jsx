@@ -11,7 +11,7 @@ export default function MainView({ children }) {
   return (
     <div className="main-view">
       <Header />
-      <main className="main-view__main">
+      <main>
         { children }
       </main>
       <Footer />

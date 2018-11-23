@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import './app.scss';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import MainView from './containers/MainView';
-
 import Contact from './sections/contact/Contact';
+import Home from './sections/home/Home';
 
+import './app.scss';
 
 export default class App extends Component {
   render() {
     return (
-      <div className="app">
+      <BrowserRouter>
         <MainView>
-          <Contact />
+          <Switch>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/contact" component={Contact} />
+          </Switch>
         </MainView>
-      </div>
+      </BrowserRouter>
     );
   }
 }
