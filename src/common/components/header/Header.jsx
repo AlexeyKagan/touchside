@@ -21,7 +21,7 @@ function Header() {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} className="header__link" to="/home">Home</Nav.Link>
+          <Nav.Link as={Link} className="header__link" to="/">Home</Nav.Link>
           <Nav.Link as={Link} className="header__link" to="/people">People</Nav.Link>
           <Nav.Link as={Link} className="header__link" to="/contact">Contact</Nav.Link>
         </Nav>
