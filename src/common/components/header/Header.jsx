@@ -1,12 +1,12 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import './header.scss';
 
-// @TODO constat for routing?
+function Header(props) {
+  const { location: { pathname } } = props;
 
-function Header() {
   return (
     <Navbar className="header" collapseOnSelect expand="sm" variant="dark">
       <Navbar.Toggle className="header__toggle" aria-controls="responsive-navbar-nav">
@@ -21,9 +21,9 @@ function Header() {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} className="header__link" to="/">Home</Nav.Link>
-          <Nav.Link as={Link} className="header__link" to="/people">People</Nav.Link>
-          <Nav.Link as={Link} className="header__link" to="/contact">Contact</Nav.Link>
+          <Nav.Link active={pathname === '/'} as={Link} className="header__link" to="/">Home</Nav.Link>
+          <Nav.Link active={pathname === '/people'} as={Link} className="header__link" to="/people">People</Nav.Link>
+          <Nav.Link active={pathname === '/contact'} as={Link} className="header__link" to="/contact">Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
 
@@ -31,4 +31,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default withRouter(Header);

@@ -1,6 +1,6 @@
-@import "~bootstrap/scss/bootstrap-grid";
-@import "~bootstrap/scss/functions";
-@import "../../assets/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../../../../node_modules/bootstrap/scss/_functions";
+@import "../../../assets/scss/variables";
 
 $bootstrap-hamburger-icon-url: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{rgb(255, 255, 255)}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 $bootstrap-hamburger-icon: str-replace($bootstrap-hamburger-icon-url, "#", "%23");

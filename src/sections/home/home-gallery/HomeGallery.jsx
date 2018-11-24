@@ -1,58 +1,27 @@
 import React, { Component } from "react";
 import { Card, CardColumns, Container } from "react-bootstrap";
 
-import CarouselBackgroundFirst from "../../../assets/images/carousel/carousel-1.jpg";
-
 import './home-gallery.scss';
 
-const MOCK_DATA = new Array(6)
-  .fill(0)
-  .map((_, i) => ({
-    id: i,
-    imgSrc: CarouselBackgroundFirst,
-    text: 'Description: ' + i,
-  }));
-
-// 9280658028.1677ed0.31f8dfa6e2134d5b8cf3e1fa6f3e6b4b
 
 export default class HomeGallery extends Component {
   state = {
-    data: [],
+    images: [],
+    imagesOnPage: 6,
   };
 
   componentDidMount() {
-    const fetchRandomImage = () => fetch('https://picsum.photos/200/300?random', {
-      method: 'GET',
-      mode: "cors",
-      cache: 'default',
-      headers: new Headers(),
-    });
+    // API that I used doesn't provide a limited response. It is only possible to fetch all items
+    const { imagesOnPage } = this.state;
 
-    const imagesPromise = new Array(5)
-      .fill(0)
-      .map(fetchRandomImage);
-
-    const getImageObjectUrl = image => image.then(res => URL.createObjectURL(res));
-
-    const resolveImageData = (img, i) => ({
-      id: i,
-      img,
-      text: 'Description: ' + i,
-    });
-
-    Promise.all(imagesPromise)
-      .then(resImages => resImages.map(resImage => resImage.blob()))
-      .then(resImages => Promise.all(resImages.map(getImageObjectUrl)))
-      .then(res => {
-        // const data = res.map(resolveImageData);
-        //
-        // this.setState({ data });
-      })
+    fetch('https://picsum.photos/list')
+      .then(res => res.json())
+      .then(images => this.setState({ images: images.slice(20, 20 + imagesOnPage) }));
   }
 
   render() {
-    const { data } = this.state;
-    console.log('data', data);
+    const { images } = this.state;
+
     return (
       <div className="album py-5 bg-light home-gallery">
         <Container>
@@ -61,12 +30,12 @@ export default class HomeGallery extends Component {
 
           <CardColumns>
             {
-              data.map(({ text, id, img }) => (
+              images.map(({ author, id }) => (
                 <Card key={id}>
-                  <Card.Img variant="top" src={img} />
+                  <Card.Img variant="top" src={`https://picsum.photos/200/200?image=${id}`} />
                   <Card.Body>
                     <Card.Text>
-                      { text }
+                      { author }
                     </Card.Text>
                   </Card.Body>
                 </Card>
