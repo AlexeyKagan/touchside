@@ -31,7 +31,7 @@ export default class Contact extends Component {
     this.setState({
       validated: true,
       isFormValid: true,
-      isFormSubmitted: true
+      isFormSubmitted: true,
     });
   };
 
@@ -40,10 +40,11 @@ export default class Contact extends Component {
     const { validated, isFormValid } = this.state;
 
     return (
-      <Form className="contact__form"
-            noValidate
-            onSubmit={this.handleSubmit}
-            validated={validated}
+      <Form
+        className="contact__form"
+        noValidate
+        onSubmit={this.handleSubmit}
+        validated={validated}
       >
         {
           !isFormValid && (

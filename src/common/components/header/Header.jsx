@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes, { string } from 'prop-types';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter } from 'react-router-dom';
 
 import './header.scss';
 
@@ -22,7 +23,7 @@ function Header(props) {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link active={pathname === '/'} as={Link} className="header__link" to="/">Home</Nav.Link>
-          <Nav.Link active={pathname === '/people'} as={Link} className="header__link" to="/people">People</Nav.Link>
+          <Nav.Link active={pathname === '/people'} className="header__link">People</Nav.Link>
           <Nav.Link active={pathname === '/contact'} as={Link} className="header__link" to="/contact">Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
@@ -30,5 +31,11 @@ function Header(props) {
     </Navbar>
   );
 }
+
+Header.propsType = {
+  location: PropTypes.shape({
+    pathname: string.isRequired,
+  }).isRequired,
+};
 
 export default withRouter(Header);

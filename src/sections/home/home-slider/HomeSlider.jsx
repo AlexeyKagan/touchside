@@ -6,9 +6,7 @@ import ScrollIcon from './ScrollIcon';
 
 import './slider.scss';
 
-
 export default class HomeSlider extends Component {
-
   static DIRECTIONS = {
     LEFT: 'LEFT',
     RIGHT: 'RIGHT',
@@ -29,7 +27,7 @@ export default class HomeSlider extends Component {
 
   onSlideRight = () => this.onSlide(HomeSlider.DIRECTIONS.RIGHT);
 
-  onSlide = directionType => {
+  onSlide = (directionType) => {
     const { activeIndex, count } = this.state;
 
     let nextIndex = null;
@@ -44,7 +42,7 @@ export default class HomeSlider extends Component {
       nextIndex = nextActiveIndex > count ? 0 : nextActiveIndex;
     }
 
-    this.setState({ activeIndex: nextIndex })
+    this.setState({ activeIndex: nextIndex });
   };
 
   onAutoSelect = activeIndex => this.setState({ activeIndex });
@@ -63,11 +61,10 @@ export default class HomeSlider extends Component {
           <h3>{title}</h3>
         </Carousel.Caption>
       </Carousel.Item>
-    ))
+    ));
   }
 
   render() {
-
     const { activeIndex } = this.state;
 
     return (
@@ -78,14 +75,12 @@ export default class HomeSlider extends Component {
           activeIndex={activeIndex}
           onSelect={this.onAutoSelect}
         >
-          { this.renderCarouselItems() }
+          {this.renderCarouselItems()}
         </Carousel>
 
         <div className="home-carousel__controls">
           <i className="fas fa-angle-left" onClick={this.onSlideLeft} />
-          <Button className="home-carousel__controls-btn">
-            View case
-          </Button>
+          <Button className="home-carousel__controls-btn">View case</Button>
           <i className="fas fa-angle-right" onClick={this.onSlideRight} />
         </div>
 
@@ -96,6 +91,6 @@ export default class HomeSlider extends Component {
           <i className="fas fa-angle-down" />
         </div>
       </section>
-    )
+    );
   }
 }

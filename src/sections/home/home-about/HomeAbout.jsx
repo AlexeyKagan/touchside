@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from "react-bootstrap";
+import { Container } from 'react-bootstrap';
 
 import './home-about.scss';
 
@@ -18,7 +18,7 @@ function HomeAbout() {
         </p>
       </Container>
     </div>
-  )
+  );
 }
 
 export default HomeAbout;

@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import { Card, CardColumns, Container } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Card, CardColumns, Container } from 'react-bootstrap';
 
 import './home-gallery.scss';
-
 
 export default class HomeGallery extends Component {
   state = {
@@ -29,18 +28,17 @@ export default class HomeGallery extends Component {
           <h3 className="home-gallery__social-id">@tamtamnl</h3>
 
           <CardColumns>
-            {
-              images.map(({ author, id }) => (
-                <Card key={id}>
-                  <Card.Img variant="top" src={`https://picsum.photos/200/200?image=${id}`} />
-                  <Card.Body>
-                    <Card.Text>
-                      { author }
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              ))
-            }
+            {images.map(({ author, id }) => (
+              <Card key={id}>
+                <Card.Img
+                  variant="top"
+                  src={`https://picsum.photos/200/200?image=${id}`}
+                />
+                <Card.Body>
+                  <Card.Text>{author}</Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
           </CardColumns>
         </Container>
       </div>

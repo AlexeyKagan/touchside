@@ -6,7 +6,7 @@ export const SLIDER_ITEMS = [
   {
     id: 'walibi',
     src: CarouselBackgroundFirst,
-    title: 'WALIBI'
+    title: 'WALIBI',
   },
   {
     id: 'second',
@@ -17,5 +17,7 @@ export const SLIDER_ITEMS = [
     id: 'third',
     src: CarouselBackgroundThird,
     title: 'Third slide label',
-  }
+  },
 ];
+
+export default SLIDER_ITEMS;

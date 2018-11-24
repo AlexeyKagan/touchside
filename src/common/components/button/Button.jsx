@@ -8,7 +8,7 @@ function Button(props) {
   const btnClassName = `button ${className}`;
 
   return (
-    <button className={btnClassName} {...restProps}>
+    <button type="submit" className={btnClassName} {...restProps}>
       { children }
     </button>
   );
