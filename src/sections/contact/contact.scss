@@ -1,20 +1,19 @@
-@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/variables";
+
 @import "../../assets/scss/variables";
 
 
 .contact {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 5%;
   width: 100%;
   flex-direction: column;
   background-image: url("../../assets/images/snow-falling.jpg");
   background-size: 100% 100%;
   min-height: 100%;
   overflow-y: auto;
-
   height: 820px;
-
 
   &__form {
     margin-top: 40px;
@@ -76,24 +75,21 @@
     text-align: center;
     font-size: 30px;
     margin-bottom: 40px;
+    margin: auto;
+    width: 55%;
+
+    @media (max-width: map-get($grid-breakpoints, "sm")) {
+      font-size: 1.2rem;
+    }
   }
 
   &__submitted-message {
     @extend .contact__invalid-message;
     font-size: 18px;
-
+    margin-top: 40px;
   }
 
   &__container {
-    @media (min-width: 1200px) {
-      max-width: 700px;
-    }
-  }
-}
-
-
-@media screen and (max-width: map-get($grid-breakpoints, "sm")) {
-  .contact__header {
-    font-size: 1.2rem;
+    max-width: 700px;
   }
 }

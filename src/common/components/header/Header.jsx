@@ -3,6 +3,8 @@ import PropTypes, { string } from 'prop-types';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link, withRouter } from 'react-router-dom';
 
+import { MAIN_ROUTING } from '../../constants/routing.const';
+
 import './header.scss';
 
 function Header(props) {
@@ -22,9 +24,29 @@ function Header(props) {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link active={pathname === '/'} as={Link} className="header__link" to="/">Home</Nav.Link>
-          <Nav.Link active={pathname === '/people'} className="header__link">People</Nav.Link>
-          <Nav.Link active={pathname === '/contact'} as={Link} className="header__link" to="/contact">Contact</Nav.Link>
+          <Nav.Link 
+            active={pathname === MAIN_ROUTING.HOME} 
+            as={Link} 
+            bsPrefix="header__link" 
+            to={MAIN_ROUTING.HOME}
+          >
+            Home
+          </Nav.Link>
+          <Nav.Link 
+            active={pathname === MAIN_ROUTING.PEOPLE} 
+            bsPrefix="header__link"
+            disabled
+          >
+            People
+          </Nav.Link>
+          <Nav.Link 
+            active={pathname === MAIN_ROUTING.CONTACT} 
+            as={Link} 
+            bsPrefix="header__link" 
+            to={MAIN_ROUTING.CONTACT}
+          >
+            Contact
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
 

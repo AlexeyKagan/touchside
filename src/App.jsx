@@ -5,6 +5,8 @@ import MainView from './common/containers/main-view/MainView';
 import Contact from './sections/contact/Contact';
 import Home from './sections/home/Home';
 
+import { MAIN_ROUTING } from './common/constants/routing.const';
+
 import './app.scss';
 
 function App() {
@@ -12,8 +14,8 @@ function App() {
     <BrowserRouter>
       <MainView>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/contact" component={Contact} />
+          <Route exact path={MAIN_ROUTING.HOME} component={Home} />
+          <Route exact path={MAIN_ROUTING.CONTACT} component={Contact} />
         </Switch>
       </MainView>
     </BrowserRouter>

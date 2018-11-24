@@ -8,11 +8,8 @@ html, body, #root {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // @todo
-  //font-family: 'Lato', sans-serif;
-  box-sizing: border-box;
 }
-// @TODO maybe move this styles
+
 *,*:before,*:after{
   box-sizing: border-box;
   margin: 0;

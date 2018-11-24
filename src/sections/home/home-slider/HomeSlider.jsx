@@ -4,7 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import Button from '../../../common/components/button/Button';
 import ScrollIcon from './ScrollIcon';
 
-import './slider.scss';
+import './home-slider.scss';
 
 export default class HomeSlider extends Component {
   static DIRECTIONS = {
@@ -22,6 +22,8 @@ export default class HomeSlider extends Component {
     activeIndex: 0,
     count: 2,
   };
+
+  container = React.createRef();
 
   onSlideLeft = () => this.onSlide(HomeSlider.DIRECTIONS.LEFT);
 
@@ -47,17 +49,23 @@ export default class HomeSlider extends Component {
 
   onAutoSelect = activeIndex => this.setState({ activeIndex });
 
+  onScrollDown = () => 
+    window.scroll({
+      top: this.container.current.offsetHeight,
+      behavior: 'smooth'
+    });
+
   renderCarouselItems() {
     const { data } = this.props;
 
     return data.map(({ src, title, id }) => (
       <Carousel.Item key={id}>
         <img
-          className="d-block w-100 home-carousel__image"
+          className="d-block w-100 home-slider__image"
           src={src}
           alt={title}
         />
-        <Carousel.Caption className="home-carousel__caption">
+        <Carousel.Caption className="home-slider__caption">
           <h3>{title}</h3>
         </Carousel.Caption>
       </Carousel.Item>
@@ -68,7 +76,10 @@ export default class HomeSlider extends Component {
     const { activeIndex } = this.state;
 
     return (
-      <section className="home-carousel">
+      <section 
+        className="home-slider" 
+        ref={this.container}
+      >
         <Carousel
           controls={false}
           indicators={false}
@@ -78,15 +89,15 @@ export default class HomeSlider extends Component {
           {this.renderCarouselItems()}
         </Carousel>
 
-        <div className="home-carousel__controls">
+        <div className="home-slider__controls">
           <i className="fas fa-angle-left" onClick={this.onSlideLeft} />
-          <Button className="home-carousel__controls-btn">View case</Button>
+          <Button className="home-slider__controls-btn">View case</Button>
           <i className="fas fa-angle-right" onClick={this.onSlideRight} />
         </div>
 
-        <div className="home-carousel__scroll">
-          <button className="home-carousel__scroll-btn">
-            <ScrollIcon className="home-carousel__scroll-svg" />
+        <div className="home-slider__scroll">
+          <button className="home-slider__scroll-btn" onClick={this.onScrollDown}>
+            <ScrollIcon className="home-slider__scroll-svg" />
           </button>
           <i className="fas fa-angle-down" />
         </div>

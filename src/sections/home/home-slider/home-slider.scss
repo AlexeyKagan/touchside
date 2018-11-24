@@ -3,16 +3,16 @@
 $carousel-min-height: 400px;
 $carousel-max-height: 700px;
 // @TODO rename accourding to jsx
-.home-carousel {
+.home-slider {
   position: relative;
   max-height: $carousel-max-height;
   min-height: $carousel-min-height;
 
   &__caption {
     top: 33%;
-    color: black;
     h3 {
       font-weight: bold;
+      color: getColor(black);
     }
   }
 
@@ -39,6 +39,7 @@ $carousel-max-height: 700px;
       margin: 0;
       display: block;
       cursor: pointer;
+
       &:hover {
         background: getColor(salmon-hover);
       }
