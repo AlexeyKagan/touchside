@@ -31,7 +31,7 @@ export default class HomeGallery extends Component {
     const { startImagesIndex } = this.state;
 
     this.setState({ startImagesIndex: startImagesIndex + count });
-  }
+  };
 
   getImages() {
     const { responseImages, startImagesIndex } = this.state;

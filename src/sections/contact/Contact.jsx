@@ -5,8 +5,6 @@ import ContactForm from './contact-form/ContactForm';
 
 import './contact.scss';
 
-// @TODO check valid icon input
-
 export default class Contact extends Component {
   state = {
     isFormValid: true,

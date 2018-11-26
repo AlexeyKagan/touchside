@@ -13,11 +13,13 @@ $bootstrap-hamburger-icon: str-replace($bootstrap-hamburger-icon-url, "#", "%23"
   width: 100%;
 
   &__link {
-    color: getColor(white);
+    color: getColor(warm-grey);
     padding: 20px 0;
     margin-right: 15px;
     font-size: 17px;
-
+    &.active {
+      color: getColor(white);
+    }
     &:hover {
       color: getColor(salmon-hover);
       text-decoration: none;

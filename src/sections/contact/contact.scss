@@ -6,14 +6,13 @@
 
 .contact {
   display: flex;
-  padding-top: 5%;
+  padding-top: 10%;
   width: 100%;
   flex-direction: column;
   background-image: url("../../assets/images/snow-falling.jpg");
   background-size: 100% 100%;
-  min-height: 100%;
   overflow-y: auto;
-  height: 820px;
+  height: 100%;
 
   &__form {
     margin-top: 40px;
@@ -34,12 +33,13 @@
   }
 
   &__invalid-field {
-    background: #555d60;
+    background: getColor(gunmetal);
     color: getColor(white);
     margin: 0;
     padding: 5px 0 5px 10px;
     font-weight: lighter;
     position: relative;
+    font-size: 14px;
 
     &:before {
       bottom: 100%;
@@ -50,7 +50,7 @@
       width: 0;
       position: absolute;
       pointer-events: none;
-      border-bottom-color: #555d60;
+      border-bottom-color: getColor(gunmetal);
       border-width: 7px;
     }
   }
@@ -91,5 +91,32 @@
 
   &__container {
     max-width: 700px;
+  }
+
+  &__field-input-wrapper {
+    position: relative;
+    font-size: 30px;
+    height: 100%;
+  }
+
+  &__field-input {
+    padding-right: 50px;
+
+    &:hover::-webkit-input-placeholder {
+      color:getColor(black);
+    }
+
+    &:hover::-moz-placeholder {
+      color:getColor(black);
+    }
+  }
+
+  &__valid-field {
+    width: auto;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    padding: 0;
+    margin: 0;
   }
 }
