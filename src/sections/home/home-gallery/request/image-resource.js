@@ -3,7 +3,7 @@ const IMAGE_RESOURCE = {
     url: 'https://picsum.photos/list',
   },
   PHOTO: {
-    url: 'https://picsum.photos/200/200?image={id}'
+    url: 'https://picsum.photos/200/200?image={id}',
   },
 };
 
