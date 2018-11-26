@@ -32,7 +32,7 @@ function GalleryList({ images, headerTitle, socialId }) {
 }
 
 GalleryList.propTypes = {
-  images: PropTypes.array.isRequired,
+  images: PropTypes.instanceOf(Array).isRequired,
   headerTitle: PropTypes.string.isRequired,
   socialId: PropTypes.string.isRequired,
 };

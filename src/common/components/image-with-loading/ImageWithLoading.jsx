@@ -8,12 +8,12 @@ const ImageWithLoading = ({ className, whileLoadingClass, ...restProps }) => (
   <StateProvider>
     {
       ({ state, setState }) => (
-        <div className={whileLoadingClass}>
+        <div className={state.isLoading ? whileLoadingClass : ''}>
           <img
             alt=""
             {...restProps}
-            className={`${className} ${''}`}
-            onLoad={() => setState({ isLoaded: true })}
+            className={`${className}`}
+            onLoad={() => setState({ isLoading: true })}
           />
         </div>
       )
@@ -24,6 +24,11 @@ const ImageWithLoading = ({ className, whileLoadingClass, ...restProps }) => (
 ImageWithLoading.propTypes = {
   className: PropTypes.string,
   whileLoadingClass: PropTypes.string,
+};
+
+ImageWithLoading.defaultProps = {
+  className: '',
+  whileLoadingClass: '',
 };
 
 export default ImageWithLoading;

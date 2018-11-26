@@ -23,4 +23,8 @@ ScrollIcon.propTypes = {
   className: PropTypes.string,
 };
 
+ScrollIcon.defaultProps = {
+  className: '',
+};
+
 export default ScrollIcon;

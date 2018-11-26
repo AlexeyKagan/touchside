@@ -8,4 +8,3 @@ const IMAGE_RESOURCE = {
 };
 
 export default IMAGE_RESOURCE;
-

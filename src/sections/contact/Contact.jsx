@@ -11,7 +11,7 @@ export default class Contact extends Component {
     isFormSubmitted: false,
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.stopPropagation();
     e.preventDefault();
 
@@ -32,7 +32,7 @@ export default class Contact extends Component {
     const { isFormValid } = this.state;
 
     return (
-      <ContactForm 
+      <ContactForm
         isFormValid={isFormValid}
         onSubmit={this.handleSubmit}
       />

@@ -3,3 +3,5 @@ export const MAIN_ROUTING = {
   PEOPLE: '/people',
   CONTACT: '/contact',
 };
+
+export default MAIN_ROUTING;

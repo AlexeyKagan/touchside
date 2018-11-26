@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Carousel } from 'react-bootstrap';
 
 import Button from '../../../common/components/button/Button';
@@ -10,6 +11,10 @@ export default class HomeSlider extends Component {
   static DIRECTIONS = {
     LEFT: 'LEFT',
     RIGHT: 'RIGHT',
+  };
+
+  static propTypes = {
+    data: PropTypes.instanceOf(Array),
   };
 
   static defaultProps = {
@@ -49,11 +54,10 @@ export default class HomeSlider extends Component {
 
   onAutoSelect = activeIndex => this.setState({ activeIndex });
 
-  onScrollDown = () => 
-    window.scroll({
-      top: this.container.current.offsetHeight,
-      behavior: 'smooth'
-    });
+  onScrollDown = () => window.scroll({
+    top: this.container.current.offsetHeight,
+    behavior: 'smooth',
+  });
 
   renderCarouselItems() {
     const { data } = this.props;
@@ -76,8 +80,8 @@ export default class HomeSlider extends Component {
     const { activeIndex } = this.state;
 
     return (
-      <section 
-        className="home-slider" 
+      <section
+        className="home-slider"
         ref={this.container}
       >
         <Carousel

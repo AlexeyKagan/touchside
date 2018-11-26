@@ -13,21 +13,19 @@ export default class HomeGallery extends Component {
   state = {
     responseImages: [],
     startImagesIndex: 0,
-    imagesCount: 0
+    imagesCount: 0,
   };
 
   componentDidMount() {
     fetchImages()
-      .then(responseImages =>
-        this.setState({
-          responseImages,
-          imagesCount: responseImages.length - 1
-        })
-      )
+      .then(responseImages => this.setState({
+        responseImages,
+        imagesCount: responseImages.length - 1,
+      }))
       .catch(console.error);
   }
 
-  onPaginate = count => {
+  onPaginate = (count) => {
     const { startImagesIndex } = this.state;
 
     this.setState({ startImagesIndex: startImagesIndex + count });
