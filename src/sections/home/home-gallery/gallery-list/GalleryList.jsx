@@ -1,42 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Card, CardColumns, Container } from 'react-bootstrap';
 
-class StateProvider extends React.Component {
-  state = {};
-
-  render() {
-    const { children } = this.props;
-
-    return children({
-      state: this.state,
-      setState: this.setState.bind(this),
-    })
-  }
-}
-
-const ImageWithLoading = ({ className, whileLoadingClass, ...restProps }) => (
-  <StateProvider>
-    {
-      ({ state, setState }) => (
-        <div className={whileLoadingClass}>
-          <img
-            alt=""
-            {...restProps}
-            className={`${className} ${''}`}
-            onLoad={() => setState({ isLoaded: true })}
-          />
-        </div>
-      )
-    }
-  </StateProvider>
-);
-
-ImageWithLoading.propTypes = {
-  className: PropTypes.string,
-  whileLoadingClass: PropTypes.string,
-};
+import ImageWithLoading from '../../../../common/components/image-with-loading/ImageWithLoading';
 
 
 function GalleryList({ images, headerTitle, socialId }) {
