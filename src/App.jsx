@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 
 import MainView from './common/containers/main-view/MainView';
 import Contact from './sections/contact/Contact';
@@ -18,6 +23,7 @@ function App() {
         <Switch>
           <Route exact path={MAIN_ROUTING.HOME} component={Home} />
           <Route exact path={MAIN_ROUTING.CONTACT} component={Contact} />
+          <Redirect to={MAIN_ROUTING.HOME} />
         </Switch>
       </MainView>
     </BrowserRouter>
