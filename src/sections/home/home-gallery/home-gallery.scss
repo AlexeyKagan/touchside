@@ -33,7 +33,7 @@
     }
   }
 
-  &__while-loading-image {
+  &__image {
     width: 100%;
     height: 350px;
 
@@ -56,5 +56,9 @@
     @include media-breakpoint-down(xs) {
       height: 100%;
     }
+  }
+
+  &__while-loading-image {
+    min-height: 150px;
   }
 }

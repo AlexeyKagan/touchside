@@ -16,7 +16,7 @@ function GalleryList({ images, headerTitle, socialId }) {
           <Card key={id}>
             <Card.Img
               src={src}
-              className="card-img-top"
+              className="card-img-top home-gallery__image"
               whileLoadingClass="home-gallery__while-loading-image"
               as={ImageWithLoading}
               alt={author}

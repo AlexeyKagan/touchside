@@ -4,4 +4,4 @@ import './assets/scss/index.scss';
 
 import './App';
 
-serviceWorker.unregister();
+serviceWorker.register();
