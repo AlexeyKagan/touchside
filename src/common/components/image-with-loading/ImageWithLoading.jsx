@@ -8,12 +8,12 @@ const ImageWithLoading = ({ className, whileLoadingClass, ...restProps }) => (
   <StateProvider>
     {
       ({ state, setState }) => (
-        <div className={state.isLoading ? whileLoadingClass : ''}>
+        <div className={state.isLoaded ? '' : whileLoadingClass}>
           <img
             alt=""
             {...restProps}
             className={`${className}`}
-            onLoad={() => setState({ isLoading: true })}
+            onLoad={() => setState({ isLoaded: true })}
           />
         </div>
       )
